@@ -16,7 +16,8 @@ import { LpWidgetSDKService } from './lp-widget-sdk.service'
 
     <button (click)="processWithinAngularZone()">Process within Angular zone</button>
     <button (click)="processOutsideOfAngularZone()">Process outside of Angular zone</button>
-        <button (click)="disposeWidget()">Dispose Widget</button>
+    <button (click)="disposeWidget()">Dispose Widget</button>
+    <button (click)="disposeWidgetViaMessage()">Dispose Widget via Message</button>
   `,
 })
 export class NgZoneDemo implements OnInit {
@@ -63,5 +64,8 @@ export class NgZoneDemo implements OnInit {
   }
   disposeWidget() {
     this.lpWidgetSDK.disposeWidget();
+  }
+  disposeWidgetViaMessage() {
+    this.lpWidgetSDK.disposeWidgetViaMessage();
   }
 }

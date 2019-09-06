@@ -49,4 +49,11 @@ export class LpWidgetSDKService {
       console.log("widget disposed:", data);
     });
   }
+  disposeWidgetViaMessage() {
+    console.log('dispose widget via message called');
+    setTimeout(() =>{
+      console.log('Dispose Widget message sent');
+      window.parent.postMessage('YEET_CLOSE', "*");            
+  }, 4000);
+  }
 }
