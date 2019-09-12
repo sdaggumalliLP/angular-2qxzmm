@@ -54,9 +54,12 @@ export class LpWidgetSDKService {
     setTimeout(() =>{
       console.log('Dispose Widget message sent');
      // window.parent.postMessage('YEET_CLOSE', "*");   
-    var slider = window.parent.document.querySelector(".lpc_maximized-header__slider-button");      
-    if(slider){
-     (slider as any).click();
+    var slider:any = window.parent.document.querySelector('[data-lp-point="slider"]');      
+    if(slider && slider.style.display === 'block'){
+      var widget = window.parent.document.querySelector(('[data-lp-point="widget_sdk"]'));
+      if(widget){
+        (widget as any).click();
+      }
     }
   }, 4000);
   }
