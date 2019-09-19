@@ -53,14 +53,14 @@ export class LpWidgetSDKService {
     console.log('dispose widget via message called');
     setTimeout(() =>{
       console.log('Dispose Widget message sent');
-     // window.parent.postMessage('YEET_CLOSE', "*");   
-    var slider:any = window.parent.document.querySelector('[data-lp-point="slider"]');      
+     window.parent.postMessage('YEET_CLOSE', "*");   
+    /*var slider:any = window.parent.document.querySelector('[data-lp-point="slider"]');      
     if(slider && slider.style.display === 'block'){
       var widget = window.parent.document.querySelector(('[data-lp-point="widget_sdk"]'));
       if(widget){
         (widget as any).click();
       }
-    }
+    }*/
   }, 4000);
   }
 }
